@@ -5,6 +5,14 @@ export default class HomeScreen extends React.Component {
 
   static navigationOptions = {
     title: 'Home',
+    headerTitle: 'Home',
+    headerRight: (
+      <Button
+        onPress={() => alert('This is a button!')}
+        title="Info"
+        color="#fff"
+      />
+    ),
     headerStyle: {
       backgroundColor: '#f4511e',
     },

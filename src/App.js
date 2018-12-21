@@ -15,10 +15,20 @@ export default class App extends Component<Props> {
 const AppNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen
+    Details: DetailsScreen,
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: 'Home',
+    /* The header config from HomeScreen is now here */
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
   }
 );
 
