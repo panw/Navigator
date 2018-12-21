@@ -2,9 +2,16 @@ import React from 'react'
 import {Text, View, Button} from 'react-native';
 
 export default class HomeScreen extends React.Component {
-  
+
   static navigationOptions = {
     title: 'Home',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
   }
 
   render() {
