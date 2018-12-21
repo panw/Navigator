@@ -3,23 +3,32 @@ import {Text, View, Button} from 'react-native';
 
 export default class HomeScreen extends React.Component {
 
-  static navigationOptions = {
-    title: 'Home',
-    headerTitle: 'Home',
-    headerRight: (
-      <Button
-        onPress={() => alert('This is a button!')}
-        title="Info"
-        color="#fff"
-      />
-    ),
-    headerStyle: {
-      backgroundColor: '#f4511e',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Home',
+      headerTitle: 'Home',
+      headerLeft: (
+        <Button
+          onPress={() => navigation.navigate('MyModal')}
+          title="Modal"
+          color="#fff"
+        />
+      ),
+      headerRight: (
+        <Button
+          onPress={() => alert('This is a button!')}
+          title="Info"
+          color="#fff"
+        />
+      ),
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      }
+    }
   }
 
   render() {

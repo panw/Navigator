@@ -3,6 +3,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native'
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import HomeScreen from './components/HomeScreen'
 import DetailsScreen from './components/DetailsScreen'
+import ModalScreen from './components/ModalScreen'
 
 export default class App extends Component<Props> {
   render() {
@@ -12,7 +13,7 @@ export default class App extends Component<Props> {
   }
 }
 
-const AppNavigator = createStackNavigator(
+const MainStack = createStackNavigator(
   {
     Home: HomeScreen,
     Details: DetailsScreen,
@@ -32,7 +33,22 @@ const AppNavigator = createStackNavigator(
   }
 );
 
-const AppContainer = createAppContainer(AppNavigator);
+const RootStack = createStackNavigator(
+  {
+    Main: {
+      screen: MainStack,
+    },
+    MyModal: {
+      screen: ModalScreen,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
 
 const styles = StyleSheet.create({
   container: {
